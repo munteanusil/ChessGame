@@ -3,7 +3,7 @@ A desktop chess game developed in C# using WPF and object-oriented design. The p
 
 ## 🛠️ Technologies & Concepts Used
 
-- **C# (.NET 6)** – Core programming language used to build game logic
+- **C# (.NET 8)** – Core programming language used to build game logic
 - **WPF (Windows Presentation Foundation)** – For building the UI and rendering the chessboard
 - **Object-Oriented Programming (OOP)** – Each piece (`Pawn`, `Knight`, etc.) is represented as a separate class inheriting from an abstract `Piece`
 - **Enums & Indexers** – For clean and readable access to positions and pieces on the board
