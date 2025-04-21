@@ -33,5 +33,15 @@
         {
             return MovePositionInDirs(from, board, dirs).Select(to => new NormalMove(from, to));
         }
+
+        public override bool CanCaptureOpponetKing(Position from, Board board)
+        {
+            return GetMoves(from, board).Any(move =>
+            {
+                Piece piece = board[move.ToPos];
+                return piece != null && piece.Type == PieceType.King;
+            });
+
+        }
     }
 }

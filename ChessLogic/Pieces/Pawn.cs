@@ -86,7 +86,14 @@ namespace ChessLogic
             return ForwardMoves(from, board).Concat(DiagonaleMoves(from,board));
         }
 
-
+        public override bool CanCaptureOpponetKing(Position from, Board board)
+        {
+            return DiagonaleMoves(from, board).Any(move =>
+            {
+                Piece piece = board[move.ToPos];
+                return piece != null && piece.Type == PieceType.King;
+            });
+        }
         
     }
 }
