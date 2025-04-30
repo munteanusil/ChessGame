@@ -98,8 +98,18 @@
             {
                 Piece piece = this[pos];
                 return piece.CanCaptureOpponetKing(pos,this);
-            });
-           
+            });  
+        }
+
+        public Board Copy()
+        {
+            Board copy = new Board();
+
+            foreach(Position pos in PiecePosition())
+            {
+                copy[pos] = this[pos].Copy();
+            }
+            return copy;
         }
 
     }
